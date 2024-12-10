@@ -80,8 +80,6 @@ const imc = peso / Math.pow(altura, 2); // const maiúscula é um magic number, 
 
 
 
-
-
 if(imc < 18.5){
   console.log('resposta exercício 3 ' + `IMC: ${imc.toFixed(2)} - abaixo do peso`)
 }else if(imc <= 25){
@@ -92,4 +90,35 @@ if(imc < 18.5){
   console.log('resposta exercício 3 ' + `IMC: ${imc.toFixed(2)} - obeso`)
 }else if(imc > 40){
   console.log('resposta exercício 3 ' + `IMC: ${imc.toFixed(2)} - obesidade grave`)
+}
+
+
+// Elabore um algoritimo que calcule o que deve ser pago por um produto, considerando o preço normal
+// de etiqueta e a escolha da condição de pagamento.
+// Utilize os códigos da tabela a sguir para ler qual a condição de pagamento escolhida e efetuar o calculo adequado.
+
+// código condição de pagamento
+// -À vista débito, recebe 10% de desconto
+// -À vista no dinheiro ou pix, recebe 15% de desconto 
+// -Em duas vezes, preço normal de etiqueta sem juros
+// -Acima de duas vezes, preço normal de etiqueta mais juros de 10%
+
+const precoProduto = 769.49;
+const tipoPagamentoEscolhido = 'parcelado'
+const descontoDebito = (precoProduto / 100) * 10;
+const descontoPix = (precoProduto / 100) * 15;
+const parcelaSemJuros = precoProduto / 2;
+const jurosParcelado = (precoProduto/100) * 10;
+
+
+if(tipoPagamentoEscolhido === 'pix'){
+  console.log(`Preço final com desconto de 15%: ` + (precoProduto - descontoPix).toFixed(2))
+}else if(tipoPagamentoEscolhido === 'debito'){
+  console.log(`Preço final com desconto de 10%: ` + (precoProduto - descontoDebito).toFixed(2))
+}else if(tipoPagamentoEscolhido === '2x sem juros'){
+  console.log(`Preço final em 2x sem juros: ${parcelaSemJuros}.toFixed(2`)
+}else if(tipoPagamentoEscolhido === 'parcelado'){
+  console.log(`Preço final com juros de 10%: ` + (precoProduto + jurosParcelado).toFixed(2))
+}else{
+  console.log('Pagamento não aprovado!');
 }
