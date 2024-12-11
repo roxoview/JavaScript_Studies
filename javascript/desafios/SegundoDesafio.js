@@ -74,7 +74,6 @@ if(media < 5){
 
 const peso = 147;
 const altura = 1.74;
-
 const imc = peso / Math.pow(altura, 2); // const maiúscula é um magic number, um valor constante que não muda de fato.
 //para utilizar ao quadrado, ao cubo utilizar Math.pow, math é uma biblioteca nativa do js, pow é uma função(método) dessa biblioteca
 
@@ -103,22 +102,41 @@ if(imc < 18.5){
 // -Em duas vezes, preço normal de etiqueta sem juros
 // -Acima de duas vezes, preço normal de etiqueta mais juros de 10%
 
-const precoProduto = 769.49;
-const tipoPagamentoEscolhido = 'parcelado'
-const descontoDebito = (precoProduto / 100) * 10;
-const descontoPix = (precoProduto / 100) * 15;
+const precoProduto = 100;
+const tipoPagamentoEscolhido = 3;
+const descontoDebito = precoProduto  * 0.1;
+const descontoPix = precoProduto  * 0.15;
 const parcelaSemJuros = precoProduto / 2;
-const jurosParcelado = (precoProduto/100) * 10;
+const jurosParcelado = precoProduto * 0.1;
+
+//podemos melhorar o código atribuindo números para cada opção de pagamento.
+// 1 - debito, 2 - dinheiro ou pix, 3 - 2x sem juros, 4 - juros parcelado
+// é uma forma de permormatizar o código, afinal um int ocupa menos espaço que uma string
+
+//separando o exercicio do juros em funções.
+function aplicarDesconto(valor, desconto){
+  return valor - (valor * (desconto / 100));
+}
+function aplicarParcelaSemJuros(valor, parcela){
+  return valor / parcela;
+}
+function aplicarJuros(valor, juros){
+  return valor + (valor * (juros / 100));
+}
 
 
-if(tipoPagamentoEscolhido === 'pix'){
-  console.log(`Preço final com desconto de 15%: ` + (precoProduto - descontoPix).toFixed(2))
-}else if(tipoPagamentoEscolhido === 'debito'){
-  console.log(`Preço final com desconto de 10%: ` + (precoProduto - descontoDebito).toFixed(2))
-}else if(tipoPagamentoEscolhido === '2x sem juros'){
-  console.log(`Preço final em 2x sem juros: ${parcelaSemJuros}.toFixed(2`)
-}else if(tipoPagamentoEscolhido === 'parcelado'){
-  console.log(`Preço final com juros de 10%: ` + (precoProduto + jurosParcelado).toFixed(2))
+if(tipoPagamentoEscolhido === 1){
+  console.log(`Preço final com desconto de 10%: R$ ` + aplicarDesconto(precoProduto,10))
+}else if(tipoPagamentoEscolhido === 2){
+  console.log(`Forma de pagamento escolhido: pix, preço final com desconto de 15%: R$ ` + aplicarDesconto(precoProduto,15))
+}else if(tipoPagamentoEscolhido === 3){
+  console.log(`Preço final R$ ${aplicarParcelaSemJuros(precoProduto, 2)} em 2x sem juros` )
+}else if(tipoPagamentoEscolhido === 4){
+  console.log(`Preço final com juros de 10%: R$ ` + aplicarJuros(precoProduto, 10))
 }else{
   console.log('Pagamento não aprovado!');
 }
+
+
+
+ 
