@@ -101,3 +101,41 @@ console.log(carro2)
 // console.log(dog.raca); // 'Labrador'
 // dog.fazerSom(); // 'Au au!'
 
+//classe base
+// class Guerreiro{
+//   nome;
+//   arma;
+//   constructor(nome, arma){
+//     this.nome = nome;
+//     this.arma = arma;
+//   }
+//   forca(){
+//     const hit = this.arma;
+//     if(hit === 'lança'){
+//       return 159
+//     }else if( hit === 'espada'){
+//      return 190
+//     }else if(hit === 'machado'){
+//       return 210
+//     }
+//   }
+// }
+
+// //classe derivada
+// class Ataque extends Guerreiro{
+//   constructor(nome, arma, ataque){   
+//     super(nome, arma);
+//     this.ataque = ataque;
+//   }
+//   atacar(){
+//     return this.forca() + this.ataque;    
+//   }
+// }
+
+// //instanciando classe base
+// const bjorn = new Guerreiro('Bjorn Ironside', 'machado');
+// console.log(bjorn.forca())
+
+// //instanciando classe derivada
+// const ataqueBjorn = new Ataque('Brutal Strike', 'machado', 399);
+// console.log(`Nome ataque: ${ataqueBjorn.nome} - Nome arma: ${ataqueBjorn.arma} - Força ataque: ${ataqueBjorn.atacar()}`)
