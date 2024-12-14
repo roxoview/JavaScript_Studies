@@ -33,5 +33,10 @@ for(let i = 0; i < string.length; i++){
   
   armazenandoString+=string[i]
   console.log(armazenandoString)
-}
 
+}
+const numerosPares = []; 
+for (let i = 0; i < 10; i = i + 2) { 
+  numerosPares.push(i); 
+} 
+console.log(numerosPares)
