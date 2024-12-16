@@ -1,5 +1,11 @@
+const entradas = [4102, 250]
+
+let i = 0;
+
 function gets(){
-  return 10;
+ const valor = entradas[i]
+ i++
+ return valor; 
 }
 
 function print(texto){
