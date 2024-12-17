@@ -6,60 +6,60 @@
 const { gets, print } = require("./funcoesAuxiliares");
 
 //simplificando
-// const quantidadeDeAlunos = gets();
+const quantidadeDeAlunos = gets();
 
-// let maiorValor = 0;
+let maiorValor = 0;
 
-// for (let i = 0; i < quantidadeDeAlunos; i++) {
-//   const numeroSorteado = gets();
-//   if(numeroSorteado > maiorValor){
-//     maiorValor = numeroSorteado
-//   }
+for (let i = 0; i < quantidadeDeAlunos; i++) {
+  const numeroSorteado = gets();
+  if(numeroSorteado > maiorValor){
+    maiorValor = numeroSorteado
+  }
 
-// }
-// print(maiorValor)
+}
+print(maiorValor)
 
-// const numerosSorteados = [];
+const numerosSorteados = [];
 
-// for (let i = 0; i < 5; i++) {
-//   const numeroSorteado = gets();
-//   numerosSorteados.push(numeroSorteado)
-// }
+for (let i = 0; i < 5; i++) {
+  const numeroSorteado = gets();
+  numerosSorteados.push(numeroSorteado)
+}
 
-// let maiorValor = 0;
+let maiorValor = 0;
 
-// for (let i = 0; i < numerosSorteados.length; i++) {
+for (let i = 0; i < numerosSorteados.length; i++) {
 
-//   const numeroSorteado = numerosSorteados[i]
-//   if(numeroSorteado > maiorValor){
-//     maiorValor = numeroSorteado;
-//   }
+  const numeroSorteado = numerosSorteados[i]
+  if(numeroSorteado > maiorValor){
+    maiorValor = numeroSorteado;
+  }
 
-// }
+}
 
-// print(maiorValor)
+print(maiorValor)
 
-// const readline = require('readline');
+const readline = require('readline');
 
-// const r1 = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// })
+const r1 = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+})
 
-// r1.question('qual seu nome? ', (name) =>{
-//   console.log(`Olá, ${name}!`)
-//   r1.close();
-// })
+r1.question('qual seu nome? ', (name) =>{
+  console.log(`Olá, ${name}!`)
+  r1.close();
+})
 
-// const valores = [492,85,48.10,89.97,50,203.34,257.73 ]
-// let valorFinal = 0;
-// for(let i = 0; i < valores.length; i++){
+const valores = [492,85,48.10,89.97,50,203.34,257.73 ]
+let valorFinal = 0;
+for(let i = 0; i < valores.length; i++){
 
-//   const valor = valores[i];
-//   valorFinal += valor
+  const valor = valores[i];
+  valorFinal += valor
 
-// }
-// console.log(valorFinal)
+}
+console.log(valorFinal)
 
 //exercicio 1
 //Faca um programa que receba a media de um aluno
@@ -68,41 +68,41 @@ const { gets, print } = require("./funcoesAuxiliares");
 //caso a media seja >= 7 imprima aprovado
 //exemplo: entrada: 5.5 saida: recuperação.
 
-// const media = gets();
+const media = gets();
 
-// if(media >= 0 && media < 5){
-//   print(`Média: ${media} - Aluno reprovado!`)
-// }else if(media >= 5 && media < 7){
-//   print(`Média: ${media} - Aluno em recuperação!`)
-// }else if(media >= 7){
-//   print(`Média: ${media} - Aluno aprovado!`)
-// }else{
-//   print('Número Inválido')
-// }
+if(media >= 0 && media < 5){
+  print(`Média: ${media} - Aluno reprovado!`)
+}else if(media >= 5 && media < 7){
+  print(`Média: ${media} - Aluno em recuperação!`)
+}else if(media >= 7){
+  print(`Média: ${media} - Aluno aprovado!`)
+}else{
+  print('Número Inválido')
+}
 
 //exercicio 2
 // Faça um programa que receba N (quantidade de numeros) e seus respectivos valores
 // impriva o maior numero par e o menor numero impar
 // exemplo entrada: 5,3,4,1,10,8 saida: maior numero par: 10 menor impar: 1
 
-// const n = gets();
-// let maiorNumeroPar = null;
-// let menorNumeroImpar = null;
+const n = gets();
+let maiorNumeroPar = null;
+let menorNumeroImpar = null;
 
-// for (let i = 0; i < n; i++) {
-//   const numero = gets();
-//   if (numero % 2 === 0) {
-//     if (maiorNumeroPar === null || numero > maiorNumeroPar) {
-//       maiorNumeroPar = numero;
-//     }
-//   } else {
-//     if (menorNumeroImpar === null || numero < menorNumeroImpar) {
-//       menorNumeroImpar = numero;
-//     }
-//   }
-// }
-// print(`Maior número par: ${maiorNumeroPar}`);
-// print(`Menor número impar: ${menorNumeroImpar}`);
+for (let i = 0; i < n; i++) {
+  const numero = gets();
+  if (numero % 2 === 0) {
+    if (maiorNumeroPar === null || numero > maiorNumeroPar) {
+      maiorNumeroPar = numero;
+    }
+  } else {
+    if (menorNumeroImpar === null || numero < menorNumeroImpar) {
+      menorNumeroImpar = numero;
+    }
+  }
+}
+print(`Maior número par: ${maiorNumeroPar}`);
+print(`Menor número impar: ${menorNumeroImpar}`);
 
 //faça um programa que calcule e imprima o salário a ser transferido para um funcionário
 //para realizar o calculo receba o valor bruto do salário e o adicional dos benefícios
@@ -113,22 +113,22 @@ const { gets, print } = require("./funcoesAuxiliares");
 //de R$ 1100.01 a 2500.00 = 10.00%
 //maior que 2500.00 = 15.00%
 
-// const imposto = [5,10,15]
-// let calculoImposto = null;
-// function calculaSalario(salario, beneficios){
-//   if(salario <= 1100){
-//     calculoImposto = salario * (imposto[0] / 100)
-//     return (salario - calculoImposto) + beneficios;
-//   }else if(salario >= 1100.01 && salario < 2500){
-//     calculoImposto = salario * (imposto[1] / 100)
-//     return (salario - calculoImposto) + beneficios;
-//   }else{
-//     calculoImposto = salario * (imposto[2] / 100)
-//     return (salario - calculoImposto) + beneficios;
-//   }
-// }
+const imposto = [5,10,15]
+let calculoImposto = null;
+function calculaSalario(salario, beneficios){
+  if(salario <= 1100){
+    calculoImposto = salario * (imposto[0] / 100)
+    return (salario - calculoImposto) + beneficios;
+  }else if(salario >= 1100.01 && salario < 2500){
+    calculoImposto = salario * (imposto[1] / 100)
+    return (salario - calculoImposto) + beneficios;
+  }else{
+    calculoImposto = salario * (imposto[2] / 100)
+    return (salario - calculoImposto) + beneficios;
+  }
+}
 
-// console.log(calculaSalario(2500, 100))
+console.log(calculaSalario(2500, 100))
 
 const valorSalario = gets();
 const valorBeneficio = gets();
