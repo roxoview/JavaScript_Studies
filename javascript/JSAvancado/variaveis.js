@@ -18,15 +18,33 @@ function teste(){
 // o hoisting se comporta diferente com variáveis declaradas
 // ele joga as variáveis para cima sem atribuição, dando erro por não ter atribuição
 
-teste1()
-teste2()
+
 
 var teste1 = function teste1(){
   console.log('teste1')
 }
 
-var teste2 = function teste2(){
-  console.log('teste2')
+var teste2 = function teste2(nome){
+  console.log(nome + ' teste2')
 }
 
+teste1()
+teste2('Romário')
+
+//diferenças entre var, let e const
+//antes do ECMAscript 6 declarava-se variaveis com var, o que causa efeitos colaterais como o hoisting
+//var escopo funçoes e global
+//let escopo bloco e reatribuível
+//const escopo bloco e não reatribuível
+
+
+//convenção de nomenclatura
+//normalmente as variáveis começam com letras, underline ou dolar sign
+//não pode começar com numero
+
+//underline significa que a variavel é restrita ao escopo, não deve sair do escopo
+
+//classe ou função construtura começam com letra maiúscula
+//uma constante pode ser toda em letra maiúscula
+//palavra composta é declarada em camelCase
 
