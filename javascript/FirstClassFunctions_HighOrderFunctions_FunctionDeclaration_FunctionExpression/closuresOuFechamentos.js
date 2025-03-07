@@ -34,3 +34,15 @@ const nomeCompleto = ConcatName('Romário')
 console.log(nomeCompleto('Oliveira'))
 console.log(nomeCompleto('Guedes'))
 console.log(nomeCompleto('Silva'))
+
+//função multiplicar 
+function multiplica (n){
+  return function (y){
+    const total = n * y
+    return total
+  }
+}
+
+const multiplicador = multiplica(2)
+console.log(multiplicador(4))
+console.log(multiplicador(5))
