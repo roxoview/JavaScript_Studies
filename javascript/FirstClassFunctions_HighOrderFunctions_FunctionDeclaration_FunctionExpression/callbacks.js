@@ -148,3 +148,4 @@
 // ✅ Evita aninhamento excessivo
 
 // Se quiser, posso te explicar async/await, que melhora ainda mais a organização. 🚀
+
